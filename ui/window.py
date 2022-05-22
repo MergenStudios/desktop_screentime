@@ -11,7 +11,7 @@ class MainWindow(QMainWindow):
         self.ui = loader.load("ui_files/main.ui")
 
         self.setCentralWidget(self.ui)
-    
+        
 def run_ui():
     app = QApplication(sys.argv)
     window = MainWindow()
@@ -20,3 +20,7 @@ def run_ui():
 
     window.show()
     app.exec()
+
+
+if __name__ == "__window__":
+    run_ui()
