@@ -1,5 +1,6 @@
-import sys
+import sys, os
 from qt_core import *
+
 from qt_material import apply_stylesheet
 
 
@@ -8,19 +9,19 @@ class MainWindow(QMainWindow):
         super().__init__()
         
         loader = QUiLoader()
-        self.ui = loader.load("ui_files/main.ui")
 
-        self.setCentralWidget(self.ui)
+        self.ui = loader.load("ui_files/main.ui")
+        self.setCentralWidget(self.ui) 
         
 def run_ui():
     app = QApplication(sys.argv)
     window = MainWindow()
 
-    apply_stylesheet(app, "dark_teal.xml")
+    apply_stylesheet(app, theme="dark_teal.xml")
 
     window.show()
     app.exec()
 
 
-if __name__ == "__window__":
+if __name__ == "__main__":
     run_ui()
