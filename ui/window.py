@@ -3,6 +3,8 @@ from qt_core import *
 
 from qt_material import apply_stylesheet
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -10,7 +12,7 @@ class MainWindow(QMainWindow):
         
         loader = QUiLoader()
 
-        self.ui = loader.load("ui_files/main.ui")
+        self.ui = loader.load(f"{BASE_DIR}/ui_files/main.ui")
         self.setCentralWidget(self.ui) 
         
 def run_ui():
