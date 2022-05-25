@@ -14,7 +14,8 @@ class MainWindow(QMainWindow):
 
         self.ui = loader.load(f"{BASE_DIR}/ui_files/main.ui")
         self.setCentralWidget(self.ui) 
-        
+
+
 def run_ui():
     app = QApplication(sys.argv)
     window = MainWindow()
@@ -22,6 +23,12 @@ def run_ui():
     apply_stylesheet(app, theme="dark_teal.xml")
 
     window.show()
+
+    center = QScreen.availableGeometry(QApplication.primaryScreen()).center()
+    geo = window.frameGeometry()
+    geo.moveCenter(center)
+    window.move(geo.topLeft())
+
     app.exec()
 
 
